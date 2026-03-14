@@ -1,0 +1,18 @@
+function runStep(stepName, actionFn) {
+  console.log(`Starting step: ${stepName}`);
+
+  try {
+    const message = actionFn();
+    return {
+      stepName: stepName,
+      passed: true,
+      message: message
+    };
+  } catch (error) {
+    return {
+      stepName: stepName,
+      passed: false,
+      message: error.message
+    };
+  }
+}
