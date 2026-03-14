@@ -1,0 +1,10 @@
+function buildUsers(names, roles) {
+  return names.map((name, index) => {
+    const username = name.toLowerCase().replace(/\s+/g, "_");
+    return {
+      username: username,
+      email: `${username}@playwrightbatch.com`,
+      role: roles[index]
+    };
+  });
+}
