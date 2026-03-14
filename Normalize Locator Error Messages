@@ -1,0 +1,17 @@
+function normalizeError(rawMessage) {
+  const normalized = rawMessage
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+
+  let category = "GENERAL";
+
+  if (normalized.includes("timeout")) {
+    category = "TIMEOUT";
+  } else if (normalized.includes("locator")) {
+    category = "LOCATOR";
+  }
+
+  console.log(`Normalized: ${normalized}`);
+  console.log(`Category: ${category}`);
+}
